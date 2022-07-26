@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import {
+  Navigate,
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Provider } from 'react-redux';
+import AddPelicula from "./components/AddPelicula";
+import Favoritos from "./components/Favoritos";
+import Home from "./components/Home";
+import PeliculaDetail from "./components/PeliculaDetail";
+import store from "./redux/store/store";
+// import your route components too
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+  <Provider store={store} >
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/add" element={<AddPelicula />} />
+      <Route path="/fav" element={<Favoritos />} />
+      <Route path="/detail/:nombre" element={<PeliculaDetail />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+  </BrowserRouter>
+  </Provider>
+);
