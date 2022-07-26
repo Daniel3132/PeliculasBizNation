@@ -1,0 +1,43 @@
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .addForm{
+        margin: 0 auto;
+        min-width: 15rem;   
+        width: 35vw;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid grey;
+        h3{
+            margin: 1rem;
+            font-size: 22px;
+        }
+        div{
+            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        input,
+        select,
+        textarea,
+        button{
+            border-radius: 8px;
+            min-height: 2rem;
+        }
+        .inputFile{
+            padding: 1rem;
+            cursor: pointer;
+            border: 1px solid white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button{
+            margin: 5% auto;
+            width: 50%;
+            background-color: rgb(224, 170, 53);
+        }
+    }
+}

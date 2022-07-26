@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/addForm.scss'
 import { useDispatch } from 'react-redux'
 import uuid from 'react-uuid'
 import Swal from 'sweetalert2'
@@ -63,33 +64,30 @@ const AddPelicula = () => {
     }
 
     return (
-        <div>
+        <section >
             <form onSubmit={handleSubmit} className="addForm">
-                <h1>Agregar Producto</h1>
+                <h3>Agregar Película</h3>
                 <div>
                     <input type="text" name="titulo" placeholder="titulo" value={titulo} onChange={handleInputChange} required autoFocus />
-                    <input type="text" name="descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
+                    <textarea type="text" rows="4" cols="50" name="descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
                     <input type="date" name="fecha" placeholder="fecha" value={fecha} onChange={handleInputChange} required />
 
-
                     <select type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} required>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-
+                        <option disabled>Categoria</option>
+                        <option value="accion">Acción</option>
+                        <option value="anime">Anime</option>
+                        <option value="crimen">Crimen</option>
+                        <option value="superHeroes">SuperHeroes</option>
+                        <option value="terror">Terror</option>
                     </select>
 
-
-                    <input type="file" name="imagen" placeholder="Ingrese imagen.jpg" onChange={handleFileChange} required />
+                    <input className='inputFile' type="file" name="imagen" placeholder="Ingrese imagen.jpg" onChange={handleFileChange} required />
                 </div>
                 <button type="submit">
                     <h2>Agregar</h2>
                 </button>
             </form >
-        </div >
+        </section >
     )
 }
 
