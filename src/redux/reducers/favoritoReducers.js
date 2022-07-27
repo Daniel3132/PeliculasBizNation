@@ -7,8 +7,16 @@ const initialState = {
 export const favoritoReducers = (state = initialState, action) => {
     switch (action.type) {
         case typesFavorito.crear:
-            return {
-                favorito: [...state.favorito, action.payload]
+            let peliRepetida = state.favorito.find(favorito => favorito.codigo === action.payload.codigo)
+            if ( action.payload.codigo === peliRepetida?.codigo) {
+                return {
+                    favorito: [...state.favorito]
+                }
+            } else {
+                return {
+                    favorito: [...state.favorito, action.payload]
+                    
+                }
             }
         case typesFavorito.editar:
             return {
