@@ -64,23 +64,25 @@ const AddPelicula = () => {
     }
 
     return (
-        <section >
+        <section id='addFormCont'>
             <form onSubmit={handleSubmit} className="addForm">
                 <h3>Agregar Película</h3>
                 <div>
                     <input type="text" name="titulo" placeholder="titulo" value={titulo} onChange={handleInputChange} required autoFocus />
                     <textarea type="text" rows="4" cols="50" name="descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
-                    <input type="date" name="fecha" placeholder="fecha" value={fecha} onChange={handleInputChange} required />
 
-                    <select type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} required>
-                        <option disabled>Categoria</option>
-                        <option value="accion">Acción</option>
-                        <option value="anime">Anime</option>
-                        <option value="crimen">Crimen</option>
-                        <option value="superHeroes">SuperHeroes</option>
-                        <option value="terror">Terror</option>
-                    </select>
+                    <div style={{flexDirection: 'row', width:"80%"}}>
+                        <input type="date" name="fecha" placeholder="fecha" value={fecha} onChange={handleInputChange} required />
 
+                        <select type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} required>
+                            <option disabled>Categoria</option>
+                            <option value="accion">Acción</option>
+                            <option value="anime">Anime</option>
+                            <option value="crimen">Crimen</option>
+                            <option value="superHeroes">SuperHeroes</option>
+                            <option value="terror">Terror</option>
+                        </select>
+                    </div>
                     <input className='inputFile' type="file" name="imagen" placeholder="Ingrese imagen.jpg" onChange={handleFileChange} required />
                 </div>
                 <button type="submit">

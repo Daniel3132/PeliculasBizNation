@@ -8,12 +8,15 @@ import {
 import AddPelicula from "../components/AddPelicula";
 import Favoritos from "../components/Favoritos";
 import Home from "../components/Home";
+import NavBar from '../components/NavBar';
 import PeliculaDetail from "../components/PeliculaDetail";
 import '../styles/index.scss'
+import '../styles/navbar.scss'
 
 const AppRouter = () => {
     return (
         <BrowserRouter>
+            <NavBar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/add" element={<AddPelicula />} />

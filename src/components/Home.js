@@ -1,8 +1,12 @@
 import React from 'react'
+import '../styles/home.scss'
+import PelisCont from './PelisCont'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <section id='home'>
+      <PelisCont />
+    </section>
   )
 }
 

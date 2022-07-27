@@ -1,6 +1,4 @@
-section{
-    width: 100vw;
-    height: 100vh;
+#addFormCont{
     display: flex;
     align-items: center;
     .addForm{
@@ -24,15 +22,17 @@ section{
         select,
         textarea,
         button{
+            width: 80%;
             border-radius: 8px;
             min-height: 2rem;
         }
         .inputFile{
-            padding: 1rem;
+            padding: 1rem 0;
             cursor: pointer;
             border: 1px solid white;
             border-radius: 4px;
             font-size: 14px;
+            width: 80%;
         }
         button{
             margin: 5% auto;
