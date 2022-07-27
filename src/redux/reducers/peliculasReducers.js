@@ -20,7 +20,7 @@ export const peliculasReducers = (state = initialState, action) => {
             }
         case typesPeliculas.delete:
             return {
-                peliculas: state.peliculas.filter(prod => prod !== action.payload)
+                peliculas: state.peliculas.filter(peli => peli !== action.payload)
             }
         default:
             return state

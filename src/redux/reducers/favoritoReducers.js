@@ -13,7 +13,7 @@ export const favoritoReducers = (state = initialState, action) => {
         case typesFavorito.editar:
             return {
                 ...state,
-                favorito: state.favorito.map(pro => pro.codigo === action.payload.codigo ? action.payload : pro)
+                favorito: state.favorito.map(peli => peli.codigo === action.payload.codigo ? action.payload : peli)
             }
         case typesFavorito.eliminar:
             return {

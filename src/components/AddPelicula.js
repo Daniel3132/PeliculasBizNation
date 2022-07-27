@@ -72,10 +72,11 @@ const AddPelicula = () => {
                     <textarea type="text" rows="4" cols="50" name="descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
 
                     <div style={{flexDirection: 'row', width:"80%"}}>
+                        <label htmlFor="fecha">Estreno:</label>
                         <input type="date" name="fecha" placeholder="fecha" value={fecha} onChange={handleInputChange} required />
 
                         <select type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} required>
-                            <option disabled>Categoria</option>
+                            <option value="">Categoria</option>
                             <option value="accion">Acción</option>
                             <option value="anime">Anime</option>
                             <option value="crimen">Crimen</option>
