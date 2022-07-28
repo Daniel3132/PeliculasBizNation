@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root{
-    --backgroundSoftBlue: #242F3E;
-    --backgroundDarktBlue: #131921;
+    --backgroundSoftBlue: #1b232e;
+    --backgroundDarktBlue: #0d1217;
 }
 *{
     margin: 0;
     font-family: 'Roboto';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
 }
 body{
-    background-color: var(--backgroundDarktBlue);
+    background-color: var(--backgroundSoftBlue);
     color: white;
 }
 section{
@@ -18,7 +18,6 @@ section{
     height: 100%;
 }
 div{
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -35,7 +34,9 @@ p{
     margin-bottom: 0;
 }
 button,
-img{
+img
+a,
+option{
     cursor: pointer;
 }
 button{
@@ -43,18 +44,18 @@ button{
     min-width: fit-content;
     min-height: fit-content;
     padding: 0.5rem;
-    background-color: rgb(224, 170, 53);
+    background-color: rgb(33, 176, 52);
 }
-.btnBuscar{
-    border-radius: 1000px;
-    background-color: rgb(255, 66, 66);
-    border: none;
-}
-.pantallaCarga{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #131921;
-    width: 100vw;
-    height: 100vh;
-}
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--backgroundDarktBlue);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--backgroundSoftBlue);
+    border-radius: 10px;
+    border: 1px solid white;
+  }

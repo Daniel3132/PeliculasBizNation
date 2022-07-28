@@ -1,3 +1,53 @@
 #home{
-    
-}
+    .filtros{
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+        input{
+            height: 2rem;
+            padding: 0;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            button{
+                display: flex;
+                align-items: center;
+                border: none;
+                height: 2rem;
+                width: fit-content;
+                background: none;
+            }
+            input{
+                background: none;
+                border: none;
+                border-bottom: 1px solid white;
+                &:focus{
+                    outline: none;
+                    color: white;
+                }
+            }
+        }
+        .categoriasCont{
+            width: fit-content;
+            select{
+                background: none;
+                color: white;
+                height: 2rem;
+            }
+            option{
+                padding: 1rem 0;
+                background-color:black;
+                color: white;
+            }
+        }
+        p{
+            input{
+                background: none;
+                color: white;
+                width:3rem ;
+            }
+        }
+    }
+    }

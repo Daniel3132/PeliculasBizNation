@@ -6,37 +6,52 @@
     gap: 2rem;
     align-items: center;
     padding-bottom: 1rem;
-    height: 15rem;
-
-    div {
+    padding: 1rem;
+    div{
+        border-top: 1px solid white;
+        border-radius: 20px;
         width: 200px;
+        padding-top: 0.5rem;
         color: white;
         flex-direction: column;
-
+        h2{
+            margin-bottom: 3px;
+        }
         img {
             width: 200px;
             height: 250px;
+            border-radius: 0 0 8px 8px;
         }
-
         span {
-            color: rgb(231, 81, 81);
+            position: relative;
+            bottom: 5.3rem;
+            left: 6rem;
+            background-color: rgba(0, 0, 0, 0.643);
+            padding: 0.5rem;
+            border-radius: 100%;
+            cursor: pointer;
+            &:hover{
+                    bottom: 5.6rem;
+                }
+            img{
+                width: 1.5rem;
+                height: 1.5rem;
+                
+            }
         }
-
-        button {
-            border: none;
-            border-radius: 1000px;
-            visibility: collapse;
-            width: 35%;
-            margin: 1rem 5%;
-            background-color: coral;
+        small{
+            position: relative;
+            align-self: flex-start;
+            bottom: 2.3rem;
+            background-color: rgba(0, 0, 0, 0.871);
+            padding: 0.5rem;
+            border-radius: 5px;
         }
-
-        .btnEditar {
-            background-color: lightseagreen;
-        }
-
         &:hover button {
             visibility: visible;
+        }
+        &:hover{
+            transform: scale(1.1);
         }
     }
 }

@@ -24,7 +24,9 @@ const Favoritos = () => {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: 'grey',
-      confirmButtonText: 'Si, Eliminar!'
+      confirmButtonText: 'Si, Eliminar!',
+      background: "#000",
+      color: "white"
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(Eliminarfavoritos(id))
@@ -32,13 +34,13 @@ const Favoritos = () => {
           'Eliminado!',
         )
       }
-      getFavs()
+      getFavs() //actualizar luego de eliminar
     })
   }
 
   return (
     <section id='section'>
-      {
+      { //eliminar o agregar segun desde donde se llame ListarPelis
         pelis.length !== 0
           ? <ListarPelis peliculas={pelis} favorito={true} eliminarFavorito={eliminarFavorito} />
           : <h2>Aún no has agregado nada a favoritos</h2>

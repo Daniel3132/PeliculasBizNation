@@ -33,11 +33,12 @@ const AddPelicula = () => {
 
         Swal.fire({
             title: 'Agregado!',
-            text: 'Modal with a custom image.',
             imageUrl: values.imagen,
-            imageWidth: 400,
-            imageHeight: 200,
+            imageWidth: 200,
+            imageHeight: 300,
             imageAlt: 'Custom image',
+            background: "#000",
+            color: "white"
         })
     }
 
@@ -59,7 +60,7 @@ const AddPelicula = () => {
             icon: 'success',
             title: 'Agregando',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000 //tiempo de carga a cludinary
         })
     }
 
@@ -74,7 +75,7 @@ const AddPelicula = () => {
 
                 <div>
                     <label htmlFor="descripcion">Descripcion:</label>
-                    <textarea type="text" rows="4" cols="50" name="Descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
+                    <textarea type="text" rows="4" cols="50" name="descripcion" placeholder="Descripcion" value={descripcion} onChange={handleInputChange} required />
                 </div>
 
                 <div>
@@ -88,14 +89,37 @@ const AddPelicula = () => {
                         <option value="accion">Acción</option>
                         <option value="anime">Anime</option>
                         <option value="crimen">Crimen</option>
-                        <option value="superHeroes">SuperHeroes</option>
+                        <option value="superheroes">SuperHeroes</option>
                         <option value="terror">Terror</option>
                     </select>
                 </div>
 
-                <div>
-                    <label htmlFor="imagen">Imagen:</label>
-                    <input className='inputFile' type="file" name="imagen" placeholder="Ingrese imagen.jpg" onChange={handleFileChange} required />
+                <div className="file-input">
+                    <input
+                        type="file"
+                        name="file-input"
+                        id="file-input"
+                        className="file-input__input"
+                        onChange={handleFileChange}
+                        required
+                    />
+                    <label className="file-input__label" htmlFor="file-input">
+                        <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            data-prefix="fas"
+                            data-icon="upload"
+                            className="svg-inline--fa fa-upload fa-w-16"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                            ></path>
+                        </svg>
+                        <span>Subir Imagen</span></label>
                 </div>
                 <button type="submit">
                     <h2>Agregar</h2>

@@ -1,17 +1,22 @@
 .navBar {
     color: white;
-    background-color: rgba(0, 0, 0, 0.279);
+    background-color: var(--backgroundDarktBlue);
     width: 100%;
     position:static;
     top: 0;
     padding: 1rem 0;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
     div {
         width: 100%;
         justify-content: space-around;
         a{
             color: white;
             text-decoration: none;
+            &:hover{
+                color: rgb(255, 49, 49);
+                text-decoration: underline;
+            }
         }
         div{
             width: fit-content;

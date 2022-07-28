@@ -30,23 +30,27 @@ const PelisCont = ({ peliculas, favorito, eliminarFavorito }) => {
         <section id='peliscont'>
             <div className='CardsCont'>
                 {
-                peliculas.length === 0 ? <h2>No se encontró ningún titulo</h2>
-                :
-                peliculas.map((p, index) => ( //parentesis para hacer el return
-                    <div key={index}>
-                        <div>
-                            <p>{p.titulo}</p>
-                            <Link to={`/detail/${p.titulo}`}>
-                                <img src={p.imagen} alt="" />
-                            </Link>
-                        </div>
-                        {
-                            favorito ? <span onClick={() => eliminarFavorito(p.codigo)}>Quitar de favoritos</span>
-                                : <span onClick={() => agregarFavorito(p)}>favorito</span>
-                        }
-                        <span>{p.fecha}</span>
-                    </div>
-                ))}
+                    peliculas.length === 0 ? <h2>No se encontró ningún titulo</h2>
+                        :
+                        peliculas.map((p, index) => ( //parentesis para hacer el return
+                            <div key={index}>
+
+                                <h2>{p.titulo}</h2>
+                                <Link to={`/detail/${p.titulo}`}>
+                                    <img src={p.imagen} alt="" />
+                                </Link>
+                                <small>{p.fecha}</small>
+                                {
+                                    favorito ?
+                                        <span onClick={() => eliminarFavorito(p.codigo)}>
+                                            <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1658973386/samples/amazonas/delete-stop-svgrepo-com_m3i2z8.svg" alt="" />
+                                        </span>
+                                        : <span className='favorito' onClick={() => agregarFavorito(p)}>
+                                            <img src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1658972940/samples/amazonas/favorite-svgrepo-com_etkt6d.svg" alt="" />
+                                        </span>
+                                }
+                            </div>
+                        ))}
             </div>
         </section>
     )
